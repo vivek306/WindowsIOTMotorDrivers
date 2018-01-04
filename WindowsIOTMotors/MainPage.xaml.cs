@@ -34,9 +34,10 @@ namespace WindowsIOTMotors
         // Servo Motor Pins
         private const int PCA9685_Servo_Pin = 0;
         // DC Motor Pins
-        private const int PCA9685_DC_Pin = 15, DCInputAPin = 17, DCInputBPin = 27;
+        private const int PCA9685_DC1_Pin = 15, DCInputAPin = 17, DCInputBPin = 27;
+        private const int PCA9685_DC2_Pin = 14, DCInputCPin = 23, DCInputDPin = 24;
         // Step Motor Pins
-        private const int Step_IN1 = 19, Step_IN2 = 26, Step_IN3 = 13, Step_IN4 = 6;
+        private const int Step_IN1 = 6, Step_IN2 = 13, Step_IN3 = 19, Step_IN4 = 26;
 
         // Servo Max and Min Range
         private const int ServoMaxPWM = 450;
@@ -68,10 +69,15 @@ namespace WindowsIOTMotors
             // Driver for L298N
             dcMotorDriver = new L298N(new L298NMotors
             {
-                ENPin = PCA9685_DC_Pin,
+                ENPin = PCA9685_DC1_Pin,
                 INAPin = DCInputAPin,
                 INBPin = DCInputBPin
-            }, null, pwmDriver);
+            }, new L298NMotors
+            {
+                ENPin = PCA9685_DC2_Pin,
+                INAPin = DCInputCPin,
+                INBPin = DCInputDPin
+            }, pwmDriver);
             // Driver for ULN2003
             stepMotorDriver = new ULN2003(Step_IN1, Step_IN2, Step_IN3, Step_IN4);
 
@@ -218,8 +224,10 @@ namespace WindowsIOTMotors
                 }
             };
 
+
+
             stopwatch.Start();
-            await stepMotorDriver.Start(defaultVal, StepperMotorDirection.IsOn, progress: progress);
+            await stepMotorDriver.Start(revolutions: defaultVal, isClockwise: StepperMotorDirection.IsOn, progress: progress);
             stopwatch.Stop();
             StepperTimeTaken.Text = Math.Round(defaultVal, 2) + " revolution(s) in " + Math.Round(stopwatch.Elapsed.TotalMinutes, 2) + " min(s) ";
         }
