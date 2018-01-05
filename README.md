@@ -5,7 +5,12 @@ Windows IOT motor drivers and demo for PCA9695, ULN2003 and L298N chipsets contr
 More info on this project can be found in
 https://www.hackster.io/vivek306/windows-iot-stepper-servo-and-dc-motors-66c0c8
 
-Please note all these libraries requires the Platform to be in "ARM->Remote device" to Debug (I will make it work with all platforms eventually)
+Nuget Install
+```
+Install-Package IOTMotorDrivers -Version 1.0.0-Pre
+```
+
+Please note all these libraries will build under any platform but it requires the Platform to be in "ARM->Remote device" to Debug (I will make it work with all platforms eventually)
 
 ```c#
 // DC Motor Pins 
