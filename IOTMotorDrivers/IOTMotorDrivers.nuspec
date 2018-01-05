@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>IOTMotorDrivers</id>
+    <version>1.0.0</version>
+    <title>Windows IOT Motor Drivers</title>
+    <authors>Vivek</authors>
+    <owners>Vivek</owners>
+    <licenseUrl>https://raw.githubusercontent.com/vivek306/WindowsIOTMotorDrivers/master/LICENSE</licenseUrl>
+    <projectUrl>https://www.hackster.io/vivek306/windows-iot-stepper-servo-and-dc-motors-66c0c8</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/vivek306/WindowsIOTMotorDrivers/master/WindowsIOTMotors/Assets/Square44x44Logo.scale-400.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows IOT motor driver for PCA9695, ULN2003 and L298N chipsets controlling Servo, Stepper and DC motors respectively.</description>
+    <releaseNotes />
+    <copyright>Copyright 2018</copyright>
+    <tags>dc motor servo stepper ULN2003 PCA9685 L298N</tags>
+  </metadata>
+  <files>
+    <file src="bin\ARM\Release\IOTMotorDrivers.dll" target="runtimes\win10-arm\lib\uap10.0"  />
+    <file src="bin\ARM\Release\IOTMotorDrivers.pri" target="runtimes\win10-arm\lib\uap10.0"  />
+    <file src="bin\ARM\Release\IOTMotorDrivers.pdb" target="runtimes\win10-arm\lib\uap10.0" />
+
+    <file src="bin\ARM\Release\IOTMotorDrivers.dll" target="ref\uap10.0" />
+    <file src="bin\ARM\Release\IOTMotorDrivers.pri" target="ref\uap10.0" />
+  </files>
+</package>

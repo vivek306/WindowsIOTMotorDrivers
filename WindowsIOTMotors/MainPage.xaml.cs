@@ -137,7 +137,7 @@ namespace WindowsIOTMotors
 
         private void DC1StopButton_Click(object sender, RoutedEventArgs e)
         {
-            dcMotorDriver.Stop(L298NMotorSelection.Motor1);
+            dcMotorDriver.Stop(L298NMotorSelection.All);
         }
 
         private void DCMotorSlider1_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)

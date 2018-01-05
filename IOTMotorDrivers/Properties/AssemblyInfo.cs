@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("IOTMotorDrivers")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Windows IOT motor drivers and demo for PCA9695, ULN2003 and L298N chipsets controlling Servo, Stepper and DC motors respectively.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("IOTMotorDrivers")]
