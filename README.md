@@ -5,6 +5,8 @@ Windows IOT motor drivers and demo for PCA9695, ULN2003 and L298N chipsets contr
 More info on this project can be found in
 https://www.hackster.io/vivek306/windows-iot-stepper-servo-and-dc-motors-66c0c8
 
+Please note all these libraries requires the Platform to be in "ARM->Remote device" to Debug (I will make it work with all platforms eventually)
+
 ```c#
 // DC Motor Pins 
 private const int PCA9685_DC1_Pin = 15, DCInputAPin = 17, DCInputBPin = 27; 
@@ -28,6 +30,8 @@ dcMotorDriver = new L298N(new L298NMotors
 dcMotorDriver.Start(motorSelection: L298NMotorSelection.Motor1, speedPercent1: 0.2, isClockwise1: true); 
 // Start both Motor 1 and 2 parallely
 // dcMotorDriver.Start(motorSelection: L298NMotorSelection.All, speedPercent1: 0.2, isClockwise1: true, speedPercent2: 0.2, isClockwise2: true);
+// Wait for 2 seconds
+await Task.Delay(2000);          
 // To stop the Stepper Motor
 stepMotorDriver.Stop();
 ```
